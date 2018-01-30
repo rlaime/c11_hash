@@ -1,4 +1,4 @@
-import dash_hash
+import c11_hash
 from binascii import unhexlify, hexlify
 
 import unittest
@@ -40,8 +40,8 @@ class TestSequenceFunctions(unittest.TestCase):
         self.block_header = unhexlify(header_hex)
         self.best_hash = best_hash
 
-    def test_dash_hash(self):
-        self.pow_hash = hexlify(dash_hash.getPoWHash(self.block_header))
+    def test_c11_hash(self):
+        self.pow_hash = hexlify(c11_hash.getPoWHash(self.block_header))
         self.assertEqual(self.pow_hash.decode(), self.best_hash)
 
 

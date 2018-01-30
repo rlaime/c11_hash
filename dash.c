@@ -17,7 +17,7 @@
 #include "sha3/sph_echo.h"
 
 
-void dash_hash(const char* input, int len, char* output)
+void c11_hash(const char* input, int len, char* output)
 {
     sph_blake512_context     ctx_blake;
     sph_bmw512_context       ctx_bmw;
