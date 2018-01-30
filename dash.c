@@ -48,12 +48,12 @@ void c11_hash(const char* input, int len, char* output)
     sph_groestl512_close(&ctx_groestl, hashA);
 
     sph_jh512_init(&ctx_jh);
-    sph_jh512 (&ctx_jh, hashB, 64);
-    sph_jh512_close(&ctx_jh, hashA);
+    sph_jh512 (&ctx_jh, hashA, 64);
+    sph_jh512_close(&ctx_jh, hashB);
 
     sph_keccak512_init(&ctx_keccak);
-    sph_keccak512 (&ctx_keccak, hashA, 64);
-    sph_keccak512_close(&ctx_keccak, hashB);
+    sph_keccak512 (&ctx_keccak, hashB, 64);
+    sph_keccak512_close(&ctx_keccak, hashA);
 
     sph_skein512_init(&ctx_skein);
     sph_skein512 (&ctx_skein, hashA, 64);
